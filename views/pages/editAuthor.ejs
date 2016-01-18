@@ -10,25 +10,15 @@
 	<div class="container-fluid">
 		<div class="container-fluid">
 	  		<div class="jumbotron">
-	  			<form action="/authors/new" method="POST">
+	  			<form method="POST" action="/authors/author/<%= data %>/edit?_method=PUT">
 	  				<label for="firstname">first name:</label>
 	  					<input class="form-control" type="text" name="firstname" id="firstname">
 	  				<label for="last-name">last name:</label>
 	  					<input class="form-control" type="text" name="last-name" id="last-name">
 	  				<label for="picture-url">picture url</label>
 	  					<input class="form-control" type="text" name="picture-url" id="picture-url">
-	  				<textarea name="bio" class="form-control"></textarea>
-	  				<% if(books) { %>
-	  					<% books.forEach(function(book) { %>
-	  						<select multiple name="books">
-	  							<option value="<%= book.book_id %>"><%= book.title %></option>
-	  						</select>
-	  					<% }) %>
-	  				<% } else { %>
-	  					<select disabled="" name="books">
-	  						<option value=""></option>
-	  					</select>
-	  				<% } %>
+	  				<label>Description: </label>
+	  					<textarea name="bio" class="form-control"></textarea>
 	  				<button type="submit" class="form-control btn btn-success">Submit</button>
 	  			</form>
 	  		</div>

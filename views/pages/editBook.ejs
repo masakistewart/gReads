@@ -10,7 +10,7 @@
 	<div class="container-fluid">
 		<div class="container-fluid">
 	  		<div class="jumbotron">
-	  			<form action="/books/new" method="POST">
+	  			<form method="POST" action="/books/book/<%= data %>/edit?_method=PUT">
 	  				<label for="title">Title:</label>
 	  					<input class="form-control" type="text" name="book-title" id="book-title">
 	  				<label for="genre">genre:</label>
@@ -20,15 +20,6 @@
 	  				<label for="description">Desc.</label>
 	  					<textarea class="form-control" name="description"></textarea>
 	  				<label for="authors">Authors</label>
-	  					<% if(authors) {%>
-	  					<select multiple name="authors">
-	  						<% authors.forEach(function(author) { %>
-	  							<options value="<%= author.id %>"><%= author.name%></options>
-	  						<% }) %>
-	  					</select>
-	  					<% } else { %>
-	  						<select disabled></select>
-	  					<% } %>
 	  				<button type="submit" class="form-control btn btn-success">Submit</button>
 	  			</form>
 	  		</div>

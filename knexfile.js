@@ -3,10 +3,10 @@
 module.exports = {
 
   development: {
-    client: 'sqlite3',
+    client: 'postgresql',
     connection: {
       host: 'localhost',
-      database: 'gBooks'
+      database: 'galvanizeBooks'
     }
   },
 

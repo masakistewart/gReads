@@ -1,15 +1,17 @@
-var express 	= require('express'),
-	app			= express(),
-	morgan  	= require('morgan'),
-	locus 		= require('locus'),
-	bodyParser  = require('body-parser'),
-	books 		= require('./routes/books'),
-	authors 	= require('./routes/authors');
+var express 	    = require('express'),
+	app			    = express(),
+	morgan  	    = require('morgan'),
+	locus 		    = require('locus'),
+	bodyParser      = require('body-parser'),
+	books 		    = require('./routes/books'),
+	authors 	    = require('./routes/authors'),
+	methodOverride  = require('method-override');
 
 
 app.set('view engine', 'ejs');
 app.use(morgan('dev'));
-app.use(express.static('public'))
+app.use(express.static('public'));
+app.use(methodOverride('_method'));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(function(req, res, next) {

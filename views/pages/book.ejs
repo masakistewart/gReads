@@ -8,29 +8,46 @@
 <% include ../partials/header %>
 
 <div class="container-fluid">
-<div class="col-md-4">
-	<% if (books) { %>
-		<% books.forEach(function(book){ %>
-		<div class="jumbotron">
-			<div class="col-md-8">
-				<div class="row">
-					<div class="col-md-4">
-						<img src="<%= book.img %>">
-					</div>
-					<div class="col-md-8">
-					<h4><%= book.title %></h4>
-					<p></p>
-					</div>
-				</div>
+	<div class="col-md-2">
+		<div id="sidbar" class="row">
+			<div id="section-authors">
+				<a href="/authors">
+					<img src="https://static.pexels.com/photos/7103/writing-notes-idea-conference.jpg" />
+				</a>
+				<p>Authors</p>
+			</div>
+			<div id="section-books">
+				<a href="/books">
+					<img src="https://static.pexels.com/photos/2757/books-magazines-building-school.jpg" />
+				</a>
+				<p>Books</p>
 			</div>
 		</div>
-		<% }) %>
+	</div>
+	<div class="col-md-10">
+		<div class="jumbotron">
+		<% if (books) { %>
+			<% books.forEach(function(book){ %>
+				<div class="row">
+					<div class="col-md-4">
+						<img src="<%= book.img %>" />
+					</div>
+					<div class="col-md-8">
+						<h4><%= book.title %>, <%=book.genre%></h4>
+						<p><%= book.description %></p>
+						<a class="btn btn-primary" href="books/book/<%= book.book_id %>/edit">Edit</a>
+						<a class="btn btn-danger" href="books/book/<%= book.book_id %>/del?_method='del'">Delete</a>
+					</div>
+				</div>
+			<% }) %>
 		<% } else { %>
 			<div class="jumbotron">
 				<h1>NO Books Yet</h1>
 			</div>
 		<% } %>
+		</div>
 	</div>
+</div>
 
 <% include ../partials/footer %>
 </body>

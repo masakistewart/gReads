@@ -8,17 +8,40 @@
 	<% include ../partials/header %>
 
 	<div class="container-fluid">
-		<div class="col-md-6">
-			<a href="/authors">
-				<img src="https://static.pexels.com/photos/7103/writing-notes-idea-conference.jpg" alt="authors img">
-			</a>
-			<h2 class="text-center text-success">Authors</h2>
+		<div class="col-md-2">
+			<div id="sidbar" class="row">
+				<div id="section-authors">
+					<a href="/authors">
+						<img src="https://static.pexels.com/photos/7103/writing-notes-idea-conference.jpg" />
+					</a>
+					<p>Authors</p>
+				</div>
+				<div id="section-books">
+					<a href="/books">
+						<img src="https://static.pexels.com/photos/2757/books-magazines-building-school.jpg" />
+					</a>
+					<p>Books</p>
+				</div>
+			</div>
 		</div>
-		<div class="col-md-6">
-			<a href="books">
-				<img src="https://static.pexels.com/photos/2757/books-magazines-building-school.jpg" alt="books img">
-			</a>
-			<h2 class="text-center text-success">Books</h2>
+		<div class="col-md-10">
+			<div class="jumbotron">
+				<% if (authors) { %>
+					<% authors.forEach(function(author){ %>
+						<div class="row">
+							<div class="col-md-4">
+								<img id="bookPic" src="<%= author['picture-url'] %>" />
+							</div>
+							<div class="col-md-8">
+								<h4>TITLE: <a href="/authors/author/<%= author.author_id %>"><%= author['first-name'] %> <%= author['last-name'] %></a></h4>
+								<p><%= author.bio %></p>
+							</div>
+						</div>
+					<% }) %>
+				<% } else { %>
+					<h1>NO Books Yet</h1>
+				<% } %>
+			</div>
 		</div>
 	</div>
 
