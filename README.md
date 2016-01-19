@@ -3,7 +3,8 @@
 experienced some major setbacks during this test and could only complete a working crud model without an authentication part. I wasted time on trying to learn a many to many with knex when I should have just used a workaround. I will not let this happen again.
 
 ## deployed site
-'n/a'
+
+https://immense-everglades-1643.herokuapp.com/
 
 ## datamodel
 
