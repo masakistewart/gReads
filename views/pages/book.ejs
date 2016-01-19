@@ -30,13 +30,15 @@
 			<% books.forEach(function(book){ %>
 				<div class="row">
 					<div class="col-md-4">
-						<img src="<%= book.img %>" />
+						<img id="bookPic" src="<%= book['cover-url'] %>" />
 					</div>
 					<div class="col-md-8">
 						<h4><%= book.title %>, <%=book.genre%></h4>
 						<p><%= book.description %></p>
-						<a class="btn btn-primary" href="books/book/<%= book.book_id %>/edit">Edit</a>
-						<a class="btn btn-danger" href="books/book/<%= book.book_id %>/del?_method='del'">Delete</a>
+						<a class="btn btn-primary" href="/books/book/<%= book.book_id %>/edit">Edit</a>
+						<form action="/books/book/<%= book.book_id %>/del?_method=DELETE">
+							<button type="submit" class="btn btn-danger">Delete</button>
+						</form>
 					</div>
 				</div>
 			<% }) %>

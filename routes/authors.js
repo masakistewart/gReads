@@ -18,9 +18,7 @@ router.get('/new', function(req, res) {
 
 router.get('/author/:id',function(req,res) { 
   knex('authors').where({author_id: req.params.id}).then(function(data) {
-  	knex('books_authors').where({authors_id: req.params.id}).then(function(bookData) {
-  		res.render('pages/author', {author: data, books: bookData});
-  	})
+  	res.render('pages/author', {author: data, books: null});
   })
  });
 
@@ -60,9 +58,7 @@ router.post('/new', function(req, res) {
 	knex('authors').insert({'first-name': firstName, 'last-name': lastName, 'bio': bio, 'picture-url': pictureUrl}).then(function() {
 		knex('authors').where({'first-name': firstName, 'last-name': lastName}).then(function(authData){
 			knex('books').where({book_id: book_id_fk}).then(function(bookData){
-				knex('books_authors').insert({authors_id: authData[0].author_id, books_id: bookData[0].book_id}).then(function(){
-					res.redirect('/');
-				});
+				res.redirect('/');
 			})
 		});
 	});

@@ -27,19 +27,19 @@
 		<div class="col-md-10">
 			<div class="jumbotron">
 				<% if(author){ %>
-					<div class="col-md-4">
-						<img id="bookPic" src="<%= author[0]['picture-url'] %>" />
-					</div>
-					<div class="col-md-8">
-						<h3><%= author[0]['first-name'] %> <%= author[0]['last-name'] %></h3>
+					<div class="row">
+						<div class="col-md-4">
+							<img id="bookPic" src="<%= author[0]['picture-url'] %>" />
+						</div>
+						<div class="col-md-8">
+							<h3><%= author[0]['first-name'] %> <%= author[0]['last-name'] %></h3>
 							<h5>Books By The Author:</h5>
-						<ul>
-							<% if(books){ %>
-								<% books.forEach(function(book) { %>
-									<li class="text-white"><a href="/books/book/<%= book.book_id %>" ><%= book.title %></a></li>
-								<% }); %>
-							<% } %>
-						</ul>
+							<form action="/authors/author/<%= author[0].author_id %>/del?_method=DELETE">
+								<button type="submit" class="btn btn-danger form-control">Delete</button>
+							</form>
+							<br>
+							<a class="btn btn-primary form-control" href="/authors/author/<%= author[0].author_id %>/edit">Edit</a>
+						</div>
 					</div>
 				<% } %>
 			</div>

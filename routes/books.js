@@ -14,10 +14,10 @@ router.get('/new', function(req, res) {
 });
 
 router.get('/book/:id',function(req,res) { 
-  knex('books').where(book_id: req.params.id).then(function(data) {
-  	res.render('pages/book');
+  knex('books').where({book_id: req.params.id}).then(function(data) {
+  	res.render('pages/book', {books: data});
   });
- });
+});
 
 router.post('/new', function(req, res) {
 	var title = req.body['book-title'],
