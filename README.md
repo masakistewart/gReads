@@ -27,7 +27,8 @@ experienced some major setbacks during this test but I did my best to complete a
 	</thead>
 </table>
 
-#### was never taught in class fully on how a many to many relationship worked.
+was never taught in class fully on how a many to many relationship worked.
+<hr>
 <table>
 	<thead>
 		<legend>books_authors</legend>
