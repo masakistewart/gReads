@@ -5,7 +5,8 @@ experienced some major setbacks during this test and could only complete a worki
 ## deployed site
 
 https://immense-everglades-1643.herokuapp.com/
-
+pivotal:
+https://www.pivotaltracker.com/n/projects/1517513
 ## datamodel
 
 <table>
@@ -28,7 +29,7 @@ https://immense-everglades-1643.herokuapp.com/
 	</thead>
 </table>
 
-was never taught in class fully on how a many to many relationship worked.
+ this part was abandoned after a couple tries
 <hr>
 <table>
 	<thead>
