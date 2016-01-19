@@ -1,6 +1,6 @@
 ## Summary
 
-experienced some major setbacks during this test but I did my best to complete a full crud app. I wasted time on trying to learn a many to many when I should have just used a workaround. I will not let this happen again.
+experienced some major setbacks during this test but I did my best to complete a full crud app. I wasted time on trying to learn a many to many with knex when I should have just used a workaround. I will not let this happen again.
 
 ## deployed site
 'n/a'
